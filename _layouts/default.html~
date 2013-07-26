@@ -14,13 +14,29 @@
     </head>
 
     <body >
-<div id="container">
-<div  style="height:460px;width:350px;" id="divBanner">
+<nav id="navBarTop">
+   <ul class="navBarTopleft">
+            <li><a href="/"><img src="/images/home.png" alt="home" title="Home" class="navDock" height="32" /></a></li>
+            <span id="spanBadges">
+                <li style="position: relative; top: -12px; font-size: 16px"><code>(badges</code></li>
+                <li style="position: relative; top: 0px; font-size: 16px" id="coderwall"></li>
+                <li style="position: relative; top: -12px; font-size: 16px"><code>)</code></li>
+            </span>
+            <!-- li style="position: relative; top: -12px; font-size: 16px"><a href="/" title="Hello world" target="_blank">Hello world</a></li -->
+        </ul>
+</nav>
+<nav id="navBarBottom">       
+ <div class="navFooter">
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" height="28" alt="CC BY-SA 3.0 License" title="CC BY-SA 3.0 License" /></a>
+                © 2013 <a href="https://github.com/gikieng" >Desing by Gi Kieng</a>
+            </div></nav>
+<div id="divMenu"></div>
+<div id="divBanner">
 <font color="white">
-<br/><br/>
-    ☆﻿ Blog personel Gikieng<br/><br/>
+<br/>
+          ​​☆﻿ Blog personel Gikieng<br>
     <span style="font-size:56px">
-         <p>「暗黙の夜」</p></span><br>
+         「暗黙の夜」</p></span><br>
      <span style="font-size:32px" >
                         黑夜隐  ​      <br/></span>
     <span style="font-size:20px" >Just Do IT</span><br>
