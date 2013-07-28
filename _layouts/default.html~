@@ -17,12 +17,15 @@
 <nav id="navBarTop">
    <ul class="navBarTopleft">
             <li><a href="/"><img src="/images/home.png" alt="home" title="Home" class="navDock" height="32" /></a></li>
-            <span id="spanBadges">
-                <li style="position: relative; top: -12px; font-size: 16px"><code>(badges</code></li>
-                <li style="position: relative; top: 0px; font-size: 16px" id="coderwall"></li>
-                <li style="position: relative; top: -12px; font-size: 16px"><code>)</code></li>
-            </span>
-            <!-- li style="position: relative; top: -12px; font-size: 16px"><a href="/" title="Hello world" target="_blank">Hello world</a></li -->
+        </ul>
+        <ul class="navBarListRight">
+            <li style="position: relative; top: -12px"><b>Gikieng</b> on </li>
+            <!-- Google+ --><li><a href="https://plus.google.com/100974147585154622588" target="_blank"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="gplus" title="Google+" class="navDock" height="32" /></a></li>
+            <!-- LinkedIn --><li><a href="http://user.qzone.qq.com/765137393" target="_blank"><img src="/images/qzone.png" alt="linkedin" title="Linkedin" class="navDock" height="32" /></a></li>
+            <!-- Blogger --><li><a href="http://blog.soimort.org" target="_blank"><img src="/images/blogger.png" alt="blog" title="Blogger" class="navDock" height="32" /></a></li>
+            <!-- Tumblr --><li><a href="http://microblog.soimort.org" target="_blank"><img src="/images/tumblr.png" alt="microblog" title="Tumblr" class="navDock" height="32" /></a></li>
+            <!-- Coderwall --><li><a href="http://coderwall.com/gikieng" target="_blank"><img src="/images/coderwall.png" alt="coderwall" title="Coderwall" class="navDock" height="32" /></a></li>
+            <!-- GitHub --><li><a href="http://github.com/gikieng" target="_blank"><img src="/images/github.png" alt="github" title="GitHub" class="navDock" height="32" /></a></li>
         </ul>
 </nav>
 <nav id="navBarBottom">       
@@ -30,7 +33,7 @@
             <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" height="28" alt="CC BY-SA 3.0 License" title="CC BY-SA 3.0 License" /></a>
                 © 2013 <a href="https://github.com/gikieng" >Desing by Gi Kieng</a>
             </div></nav>
-<div id="divMenu"></div>
+
 <div id="divBanner">
 <font color="white">
 <br/>
@@ -41,8 +44,6 @@
                         黑夜隐  ​      <br/></span>
     <span style="font-size:20px" >Just Do IT</span><br>
      </font></div>
-</div>
-
-</div>
+<div id="divPost"> <p>杂记</p>{{ content }}</a></div>
 </body>
 </html>

@@ -11,10 +11,12 @@
 }
 
 html, body { height: 100%; 
+width: 100%;
+background-image: url(/images/bg1.jpg);
 background-attachment: fixed;
 	background-position: top left;;
 	background-repeat: no-repeat;
-	background-image: url(/images/bg1.jpg);
+/*--	background-image: url(/images/bg1.jpg);-->*/
 }
 nav#navBarTop {
 	position: fixed;
@@ -55,8 +57,9 @@ img.navDock:hover {
 	-o-transform: scale(1.2);
 }
 nav .navBarTopleft{
-position: relative;
-text-align: left;
+position: absolute;
+text-align: center;
+left: 2%;
 padding-left: 16px;
 padding-top: 12px;
 
@@ -68,6 +71,25 @@ text-align: center;
     top: 0;
 	padding-left: 16px;
 	padding-top: 5px;
+}
+nav li {
+	display: inline;
+	padding-right: 8px;
+	
+    font-size: 12px;
+	color: #fff;
+}
+nav .navBarListRight {
+    position: absolute;
+	right: 0;
+    top: 6px;
+	padding-right: 16px;
+	padding-top: 5px;
+}
+div#PostShow{
+position: absolute;
+top:100px;
+right: 10%;
 }
 
 div#divBanner {
@@ -81,7 +103,6 @@ div#divBanner {
     font-size: 16px;
     text-shadow: 0 0 16px #fff;
 }
-
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }
 
@@ -168,6 +189,188 @@ ul.posts span {
 /*****************************************************************************/
 
 /* standard */
+
+div.divCategory div.divIndex:hover {
+    border-radius: 4px;
+	box-shadow: 0 0 0 2px #102040;
+}
+
+div.divCategory div.divIndexTitle {
+	left: 0;
+	width: 100%;
+}
+
+div.divCategory div.divIndexDate {
+	position: relative;
+	left: 70%;
+    top: 0;
+	width: 30%;
+	
+	text-align: right;
+}
+
+div#divTitle {
+	position: fixed;
+	left: 4%;
+    top: 128px;
+	width: 30%;
+	
+	text-align: center;
+    color: #102040;
+    text-shadow: 0 0 16px #fff;
+}
+div.divCategory {
+	position: relative;
+	padding: 16px;
+	margin-bottom: 16px;
+    
+	background-color: black;;
+	border-radius: 8px;
+	box-shadow: 0 0 16px 0 #fff;
+	opacity: 0.60;
+	color: #fff;
+}
+
+div.divCategory a {
+    color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+}
+
+div.divCategory a:hover {
+	color: #102040;
+}
+
+div.divCategory h1.hTitle1 {
+	position: relative;
+	top: -8px;
+	
+	font-size: 16px;
+	font-weight: bold;
+}
+
+div.divCategory h1.hTitle2 {
+	position: relative;
+	top: -8px;
+	
+	font-size: 13px;
+	font-weight: bold;
+}
+
+div.divCategory div.divExtLinks {
+	position: absolute;
+	right: 16px;
+    top: 16px;
+	width: 50%;
+	
+	text-align: right;
+}
+
+div.divCategory article.articleScrap {
+	position: relative;
+	padding: 8px;
+	margin-top: 0px;
+	
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 0 8px 0 #102040;
+	opacity: 0.95;
+    color: #102040;
+}
+
+div.divCategory article.articleScrap a {
+    color: #102040;
+	font-weight: bold;
+    text-decoration: none;
+}
+
+div.divCategory article.articleScrap a:hover {
+    text-decoration: underline;
+}
+
+div.divCategory aside.asideScrap {
+	position: absolute;
+	left: 55%;
+	width: 40%;
+	
+	text-align: right;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+div.divCategory section.sectionScrap {
+	position: relative;
+	left: 0;
+	width: 100%;
+	
+	font-style: italic;
+}
+
+div.divCategory img.imgScrap {
+	border-radius: 4px;
+	
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+}
+
+div.divCategory img.imgScrap:hover {
+	box-shadow: 0 0 8px 2px #102040;
+}
+
+div.divCategory div.divIndex {
+	position: relative;
+	margin-bottom: 4px;
+	
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+}
+
+div.divCategory div.divIndex:hover {
+    border-radius: 4px;
+	box-shadow: 0 0 0 2px #102040;
+}
+
+div.divCategory div.divIndexTitle {
+	left: 0;
+	width: 100%;
+}
+
+div.divCategory div.divIndexDate {
+	position: relative;
+	left: 70%;
+    top: 0;
+	width: 30%;
+	
+	text-align: right;
+}
+div#divTitle div#divTitleNav {
+	position: fixed;
+	left: 4%;
+    bottom: 128px;
+	width: 30%;
+}
+
+div#divPost {
+	position: absolute;
+	left: 38%;
+    top: 128px;
+	width: 56%;
+	padding: 16px;
+	border-radius: 8px;
+	box-shadow: 0 0 8px 0 #fff;
+	opacity: 0.40;
+	color: #000;
+}
+
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
