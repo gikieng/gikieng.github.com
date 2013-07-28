@@ -21,9 +21,7 @@
         <ul class="navBarListRight">
             <li style="position: relative; top: -12px"><b>Gikieng</b> on </li>
             <!-- Google+ --><li><a href="https://plus.google.com/100974147585154622588" target="_blank"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="gplus" title="Google+" class="navDock" height="32" /></a></li>
-            <!-- LinkedIn --><li><a href="http://user.qzone.qq.com/765137393" target="_blank"><img src="/images/qzone.png" alt="linkedin" title="Linkedin" class="navDock" height="32" /></a></li>
-            <!-- Blogger --><li><a href="http://blog.soimort.org" target="_blank"><img src="/images/blogger.png" alt="blog" title="Blogger" class="navDock" height="32" /></a></li>
-            <!-- Tumblr --><li><a href="http://microblog.soimort.org" target="_blank"><img src="/images/tumblr.png" alt="microblog" title="Tumblr" class="navDock" height="32" /></a></li>
+            <!-- Qzone --><li><a href="http://user.qzone.qq.com/765137393" target="_blank"><img src="/images/qzone.png" alt="linkedin" title="Linkedin" class="navDock" height="32" /></a></li>
             <!-- Coderwall --><li><a href="http://coderwall.com/gikieng" target="_blank"><img src="/images/coderwall.png" alt="coderwall" title="Coderwall" class="navDock" height="32" /></a></li>
             <!-- GitHub --><li><a href="http://github.com/gikieng" target="_blank"><img src="/images/github.png" alt="github" title="GitHub" class="navDock" height="32" /></a></li>
         </ul>
@@ -43,7 +41,6 @@
      <span style="font-size:32px" >
                         黑夜隐  ​      <br/></span>
     <span style="font-size:20px" >Just Do IT</span><br>
-     </font></div>
-<div id="divPost"> <p>杂记</p>{{ content }}</a></div>
+{{ content }}
 </body>
 </html>

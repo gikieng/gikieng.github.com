@@ -91,7 +91,9 @@ position: absolute;
 top:100px;
 right: 10%;
 }
-
+div#divPost div#divDisqus {
+    margin-bottom: 64px;
+}
 div#divBanner {
 	position: fixed;;
 	left: 4%;
@@ -211,7 +213,7 @@ div.divCategory div.divIndexDate {
 
 div#divTitle {
 	position: fixed;
-	left: 4%;
+	left: 30%;
     top: 128px;
 	width: 30%;
 	
@@ -354,12 +356,13 @@ div.divCategory div.divIndexDate {
 }
 div#divTitle div#divTitleNav {
 	position: fixed;
-	left: 4%;
+	left: 20%;
     bottom: 128px;
 	width: 30%;
 }
 
 div#divPost {
+background-color: white;;
 	position: absolute;
 	left: 38%;
     top: 128px;
@@ -367,10 +370,18 @@ div#divPost {
 	padding: 16px;
 	border-radius: 8px;
 	box-shadow: 0 0 8px 0 #fff;
-	opacity: 0.40;
+	opacity: 0.70;
 	color: #000;
 }
-
+div#divPostshow {
+background-color: white;;
+	position: absolute;
+	padding: 16px;
+	border-radius: 8px;
+	box-shadow: 0 0 8px 0 #fff;
+	opacity: 0.70;
+	color: #000;
+}
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
