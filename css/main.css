@@ -374,6 +374,8 @@ background-color: white;;
 	color: #000;
 }
 div#divPostshow {
+word-break: break-all; 
+word-wrap:break-word;
 }
 .post pre {
   border: 1px solid #ddd;
