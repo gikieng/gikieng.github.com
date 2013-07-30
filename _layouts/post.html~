@@ -20,32 +20,37 @@ author: Gikieng
         {{ content }}
     </article>
     
-    {% if page.disqus == true %}
-    <article id="articlePost" style="padding-bottom: 0">
-        <div id="divDisqus">
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'soimort';
-                {% if page.disqus-url %}
-                var disqus_url = '{{ page.disqus-url }}';
-                {% else %}
-                var disqus_url = '{{ page.url }}';
-                {% endif %}
-                
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+   
+<div align="right" style="position: absolute; " id="divSharebar">
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<div class="comment"> 
+    <div class="comm" id="comm"><div class="eachcomm" id="commt1"></div>
+    <form action="javascript:void(0);" id="comminput" name="comminput">
+        <div class="userinfo">
+            <label for="author">Name<font color="red">*</font></label><br>
+            <input type="text" name="author" id="author" placeholder="yourname" required="true"><br>
+            <label for="link">Website<font color="red">*</font></label><br>
+            <input type="text" name="link" id="link" placeholder="www.ooxx.com" required="true"><br>
+            <label for="email">Email<font color="red">*</font></label><br>
+            <input type="text" name="email" id="email" placeholder="user@ooxx.com" required="true"><br>
         </div>
-    </article>
-    {% else %}
-    <div style="height: 64px"></div>
-    {% endif %}
-<div align="right" style="position: absolute; bottom: 20px; " id="divSharebar">
-<a rel="nofollow" href="javascript:void((function(s,d,e){try{}catch(e){}var%20f='http://v.t.sina.com.cn/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=1392530042'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"><img src='/images/tsina.gif' alt='分享到新浪微博' border='0'></a>
+        <label for="commcon">Comment</label><br>
+        <textarea name="commcon" id="commcon" placeholder="在这里吐槽吧~" required="true"></textarea><br>
+        <input type="submit" id="pushcomm" class="pushcomm" value="提交评论"><br>
+    </form>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1374575764330613" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</div>
 </div>
 </div>

@@ -41,6 +41,7 @@
      <span style="font-size:32px" >
                         黑夜隐  ​      <br/></span>
     <span style="font-size:20px" >Just Do IT</span><br>
-{{ content }}
+     </font></div>
+<div id="divPost"> {{ content }}</a></div>
 </body>
 </html>
