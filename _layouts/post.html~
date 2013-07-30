@@ -21,7 +21,7 @@ author: Gikieng
     </article>
     
    
-<div align="right" style="position: absolute; " id="divSharebar">
+<div align="right" style="position: static; " id="divSharebar">
 
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style_24x24">
