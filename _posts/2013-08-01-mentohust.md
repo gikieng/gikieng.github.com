@@ -14,7 +14,7 @@ tags: []
 
 配置：第一次使用的时候，会提示配置。以后想改配置可以修改/etc/mentohust.conf。
 有些服务器要检查客户端的版本，可以把windows下的锐捷下的8021x.exe和W32N55.dll(可以不要这个，但是每次登录会提示缺失，不过还是可以登录上去的)拷到/etc/mentohust/下，没有这个文件夹，要自己建一个，
-#mkdir /etc/mentohust
+/#mkdir /etc/mentohust
 
 
 使用：$sudo mentohust -参数（不加参数就按照配置里的设置登录，其中-h是帮助文件）
