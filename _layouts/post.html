@@ -9,19 +9,7 @@ author: Gikieng
         <a href="/"><img src="/images/left-arrow.png" class="navDock" /></a>
     </div>
 </div>
-
-
-<div id="divPostshow">
-    <h1>{{ page.title }}</h1>
-    <p><div class="g-plusone" data-size="medium" data-annotation="none"></div></p>
-    <p><b>{{ page.date | date_to_string }}</b>, by <b>{{ page.author }}</b></p>
-    <p>{{ page.description }}</p>
-    <article id="articlePost">
-        {{ content }}
-    </article>
-    
-   
-<div align="right" style="position: static; " id="divSharebar">
+<div align="right" style="right: 2px; position: static; " id="divSharebar">
 
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style_24x24">
@@ -36,6 +24,14 @@ author: Gikieng
 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1374575764330613" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 </div>
+
+<div id="divPostshow">
+    <h1>{{ page.title }}</h1>
+    <p><div class="g-plusone" data-size="medium" data-annotation="none"></div></p>
+    <p><b>{{ page.date | date_to_string }}</b>, by <b>{{ page.author }}</b></p>
+    <p>{{ page.description }}</p>
+    <article id="articlePost">
+        {{ content }}
+    </article>
+    
 </div>
-</div>
-<script src="/js/comment.js"></script>
