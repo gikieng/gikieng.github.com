@@ -21,7 +21,7 @@
         <ul class="navBarListRight">
             <li style="position: relative; top: -12px"><b>Gikieng</b> on </li>
             <!-- Google+ --><li><a href="https://plus.google.com/100974147585154622588" target="_blank"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="gplus" title="Google+" class="navDock" height="32" /></a></li>
-            <!-- Qzone --><li><a href="http://user.qzone.qq.com/765137393" target="_blank"><img src="/images/qzone.png" alt="linkedin" title="Linkedin" class="navDock" height="32" /></a></li>
+            <!-- Qzone --><li><a href="http://user.qzone.qq.com/765137393" target="_blank"><img src="/images/qzone.png" alt="Qzone" title="Qzone" class="navDock" height="32" /></a></li>
             <!-- Coderwall --><li><a href="http://coderwall.com/gikieng" target="_blank"><img src="/images/coderwall.png" alt="coderwall" title="Coderwall" class="navDock" height="32" /></a></li>
             <!-- GitHub --><li><a href="http://github.com/gikieng" target="_blank"><img src="/images/github.png" alt="github" title="GitHub" class="navDock" height="32" /></a></li>
         </ul>
