@@ -14,6 +14,9 @@
     </head>
 
     <body >
+    <!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?uid=1374575764330613&btn=r2.gif" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 <nav id="navBarTop">
    <ul class="navBarTopleft">
             <li><a href="/"><img src="/images/home.png" alt="home" title="Home" class="navDock" height="32" /></a></li>
@@ -42,6 +45,11 @@
                         黑夜隐  ​      <br/></span>
     <span style="font-size:20px" >Just Do IT</span><br>
      </font></div>
+     <br>
+     <br>
 <div id="divPost"> {{ content }}</a></div>
 </body>
 </html>
+<!-- UJian Button BEGIN -->
+<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide&fade=1"></script>
+<!-- UJian Button END -->

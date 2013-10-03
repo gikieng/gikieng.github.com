@@ -13,10 +13,10 @@
 html, body { height: 100%; 
 width: 100%;
 background-image: url(/images/bg1.jpg);
+background-color: black;;
 background-attachment: fixed;
 	background-position: top left;;
 	background-repeat: no-repeat;
-/*--	background-image: url(/images/bg1.jpg);-->*/
 }
 nav#navBarTop {
 	position: fixed;
@@ -90,9 +90,6 @@ div#PostShow{
 position: absolute;
 top:100px;
 right: 10%;
-}
-div#divPost div#divDisqus {
-    margin-bottom: 64px;
 }
 div#divBanner {
 	position: fixed;;
@@ -195,6 +192,7 @@ ul.posts span {
 div.divCategory div.divIndex:hover {
     border-radius: 4px;
 	box-shadow: 0 0 0 2px #102040;
+ font-size: 28px;
 }
 
 div.divCategory div.divIndexTitle {
@@ -367,20 +365,15 @@ background-color: white;;
 	left: 38%;
     top: 128px;
 	width: 56%;
-	padding: 16px;
+	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 0 8px 0 #fff;
 	opacity: 0.70;
 	color: #000;
 }
 div#divPostshow {
-background-color: white;;
-	position: absolute;
-	padding: 16px;
-	border-radius: 8px;
-	box-shadow: 0 0 8px 0 #fff;
-	opacity: 0.70;
-	color: #000;
+word-break: break-all; 
+word-wrap:break-word;
 }
 .post pre {
   border: 1px solid #ddd;
@@ -391,7 +384,6 @@ background-color: white;;
 .post ul, .post ol {
   margin-left: 1.35em;
 }
-
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;

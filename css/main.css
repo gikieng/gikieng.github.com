@@ -10,13 +10,14 @@
   padding: 0;
 }
 
-html, body { height: 100%; 
+html, body { 
+height: 100%; 
 width: 100%;
-background-image: url(/images/bg1.jpg);
+background-image: url(/images/bg2.jpg);
+background-color: black;;
 background-attachment: fixed;
-	background-position: top left;;
-	background-repeat: no-repeat;
-/*--	background-image: url(/images/bg1.jpg);-->*/
+background-position: top left;;
+background-repeat: no-repeat;
 }
 nav#navBarTop {
 	position: fixed;
@@ -192,6 +193,7 @@ ul.posts span {
 div.divCategory div.divIndex:hover {
     border-radius: 4px;
 	box-shadow: 0 0 0 2px #102040;
+ font-size: 28px;
 }
 
 div.divCategory div.divIndexTitle {
@@ -364,7 +366,7 @@ background-color: white;;
 	left: 38%;
     top: 128px;
 	width: 56%;
-	padding: 6px;
+	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 0 8px 0 #fff;
 	opacity: 0.70;
@@ -383,7 +385,6 @@ word-wrap:break-word;
 .post ul, .post ol {
   margin-left: 1.35em;
 }
-
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
