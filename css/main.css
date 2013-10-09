@@ -193,7 +193,7 @@ ul.posts span {
 div.divCategory div.divIndex:hover {
     border-radius: 4px;
 	box-shadow: 0 0 0 2px #102040;
- font-size: 28px;
+ font-size: 16px;
 }
 
 div.divCategory div.divIndexTitle {
@@ -364,7 +364,7 @@ div#divPost {
 background-color: white;;
 	position: absolute;
 	left: 38%;
-    top: 128px;
+    	top: 128px;
 	width: 56%;
 	padding: 20px;
 	border-radius: 8px;
