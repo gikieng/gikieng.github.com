@@ -26,11 +26,11 @@ var getAngle = function(Xc, Yc, Xa, Ya, Xb, Yb) {
 };
 var left_center_offset = {
 	left: 30,
-	top: 100
+	top: 80
 },
 right_center_offset = {
 	left: 96,
-	top: 96
+	top: 82
 },
 radius = 10;
 var setEyeOffset = function(event) {
