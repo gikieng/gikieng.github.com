@@ -1,4 +1,4 @@
-			var meny = Meny.create({
+var meny = Meny.create({
 				menuElement: document.querySelector( '.meny' ),
 
 				contentsElement: document.querySelector( '.contents' ),
@@ -26,11 +26,11 @@ var getAngle = function(Xc, Yc, Xa, Ya, Xb, Yb) {
 };
 var left_center_offset = {
 	left: 30,
-	top: 82
+	top: 100
 },
 right_center_offset = {
 	left: 96,
-	top: 80
+	top: 96
 },
 radius = 10;
 var setEyeOffset = function(event) {
