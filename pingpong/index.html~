@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<title>双人乒乓</title>
+</head>
+<body>
+<header>
+<h1>双人乒乓</h1>
+<div id="scorepanel">
+<div class="score">
+Player A : <span id="scoreA">0</span></div>
+<div class="score">
+Player B : <span id="scoreB">0</span></div>
+</div>
+</header>
+<div id="game">
+	<div id="playground">
+		<div id="paddleA" class="paddle"></div>
+		<div id="paddleB" class="paddle"></div>
+		<div id="ball"></div>	
+	</div>
+</div>
+
+<footer>
+This is an example of creating Ping Pong game
+</footer>
+<script src="jquery-1.4.2.min.js"></script>
+<script src="html5game.pingpong.js"></script>
+
+</body>
+</html>
