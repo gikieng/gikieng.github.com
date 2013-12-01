@@ -1,20 +1,17 @@
 <article class="post">	
   <div class="divIndex">
 	<ul class="tag_box inline">
-	<span style="font-size:22px">
-分类 
-	</span>
-	  {% assign categories_list = site.categories %}
-	  {% include JB/categories_list %}
-	</ul>
-	</div>
-	{% for category in site.categories %} 
-	    <div class="divIndex">
-	  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
-	  <ul>
-	    {% assign pages_list = category[1] %}  
-	    {% include JB/pages_list  %}
-	  </ul>
-	  </div>
-	{% endfor %}
-</article>
+{% for post in site.posts %}
+{% if post.layout == 'post' and (post.lang == 'zh' or post.lang == nil) %}
+{% if post.permalink == nil %}
+<a href="{{ post.url }}">
+{% else %}
+<a href="{{ post.uri }}">
+{% endif %}
+    <div class="divIndex">
+        <div class="divIndexTitle">{{ post.title }}</div>
+        <div class="divIndexDate">{{ post.date | date_to_string }}</div>
+    </div>
+</a>
+{% endif %}
+{% endfor %}
