@@ -3,7 +3,7 @@
     font-family:"Times New Roman",Georgia,Serif;
     word-break: break-all; 
     word-wrap:break-word;
-    letter-spacing: ２mm；
+    letter-spacing: 2mm;
 }
 h2
 {
@@ -90,7 +90,7 @@ div#navcontainer li:hover
 }
 .area
 {
-    min-height:700px;
+    min-height:600px;
     margin:50px 20px 10px 14px; 
 }
 #tagUl
