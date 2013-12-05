@@ -14,7 +14,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Lab</a></li>
                 <li><a href="#">Achive</a></li>
-                <li><a href="/categories.html">Tags</a></li>
+                <li><a href="categories.html">Tags</a></li>
             </ul>
         </div>
     </div>

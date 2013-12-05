@@ -3,47 +3,28 @@ layout: post
 title: "c-post生成工具"
 categories: linux-c
 ---
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>~/gikieng.github.com/_posts/2013-8-2-c-post.md.html</title>
-<meta name="generator" content="Bluefish 2.2.4" >
-<meta name="plugin-version" content="vim7.3_v6">
-<meta name="syntax" content="modula2">
-<meta name="settings" content="use_css">
-<style type="text/css">
-<!--
-pre { font-family: monospace; color: #ffffff; background-color: #262626; }
-body { font-family: monospace; color: #ffffff; background-color: #262626; }
-.String { color: #87ceeb; }
--->
-</style>
-</head>
-<body>
-<pre>
 
     有个ruby写的post文件创建脚本，但是有些内空我并不需要，懒得修改，学了那么久的c了，不如自己用c来写一个。
 
     首先是文件名，post文件名格式是xxxx-xx-xx-title.md.这就需要获取系统时间。相关函数：time，ctime，gmtime，localtime。
 
-    表头文件：＃include&lt;time.h&gt;
+    表头文件：＃include<time.h>
 
     查一下，gmtime函数符合我的使用要求。函数定义：struct tm*gmtime(const time_t*timep);其中结构tm的定义为
-    struct tm<span class="String">{</span>
-<span class="String">    int tm_sec;    //范围为0－59，但允许61秒</span>
-<span class="String">    int tm_min;    //范围为0－59</span>
-<span class="String">    int tm_hour;   //范围为0－23</span>
-<span class="String">    int tm_mday;   //范围1－31</span>
-<span class="String">    int tm_mon;    //范围0－11</span>
-<span class="String">    int tm_year;   //从1900看算起至今的年数</span>
-<span class="String">    int tm_wday;   //范围0－6</span>
-<span class="String">    int tm_yday;   //范围0-365</span>
-<span class="String">    int tm_isdst;   //日光节约时间的旗标（不懂）</span>
-<span class="String">    }</span>;
+    struct tm{
+    int tm_sec;    //范围为0－59，但允许61秒
+    int tm_min;    //范围为0－59
+    int tm_hour;   //范围为0－23
+    int tm_mday;   //范围1－31
+    int tm_mon;    //范围0－11
+    int tm_year;   //从1900看算起至今的年数
+    int tm_wday;   //范围0－6
+    int tm_yday;   //范围0-365
+    int tm_isdst;   //日光节约时间的旗标（不懂）
+    };
 
     这些时间都是整形的，要把他们全转换成字符串。用sprintf函数：int sprintf( char *buffer, const char *format, [ argument] … );
-    表头文件：＃include&lt;stdio.h&gt;
+    表头文件：＃include<stdio.h>
 
     然后把各个内容用strcat链接起来。注意储存的空间要大，一开始我把长度设置为120，还是出现错误，后来气之下改成了500，看你还出错不。果然恶心的段吐核没有出现了。
 
@@ -57,76 +38,70 @@ body { font-family: monospace; color: #ffffff; background-color: #262626; }
 爽呀。。。
 
 再写判断yes or no时不知道为什么不能用y or no 判断，一用就出错，不管他。
+{% highlight ruby %}
 
-
-#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-#include&lt;time.h&gt;
-#include&lt;string.h&gt;
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<string.h>
 
 int main(void)
-   <span class="String">{</span>
-<span class="String">    void edit(char title[]);</span>
-<span class="String">    FILE *fp;</span>
-<span class="String">    struct tm *timenow;</span>
-<span class="String">    time_t now;</span>
-<span class="String">    char year[4],day[2],month[2];</span>
-<span class="String">    char date[19]=&quot;\0&quot;;</span>
-<span class="String">    char str[30],hail[]=&quot;.md&quot;;</span>
-<span class="String">    int f;</span>
-<span class="String">    time(&amp;now);</span>
-<span class="String">    timenow =gmtime (&amp;now);</span>
-<span class="String">    sprintf(year,&quot;%d&quot;,timenow-&gt;tm_year+1900);</span>
-<span class="String">    sprintf(day,&quot;%d&quot;,timenow-&gt;tm_mday);</span>
-<span class="String">    sprintf(month,&quot;%d&quot;,timenow-&gt;tm_mon+1);</span>
-<span class="String">    strcat(date,year);</span>
-<span class="String">    date[4]='-';</span>
-<span class="String">    strcat(date,month);</span>
-<span class="String">    strcat(date,&quot;-&quot;);</span>
-<span class="String">    strcat(date,day);</span>
-<span class="String">    strcat(date,&quot;-&quot;);</span>
-<span class="String">    char title[200]=&quot;gikieng.github.com/_posts/&quot;;</span>
-<span class="String">    strcat(title,date);</span>
-<span class="String">    printf(&quot;please input your title\n&quot;);</span>
-<span class="String">    scanf(&quot;%s&quot;,str);</span>
-<span class="String">    strcat(title,str);</span>
-<span class="String">    strcat(title,hail);</span>
-<span class="String">    printf(&quot;%s\n&quot;,title);</span>
-<span class="String">    if((fp=fopen(title,&quot;r&quot;))==NULL)</span>
-<span class="String">    {</span>
-<span class="String">        printf(&quot;你将新建一个新文章&quot;);</span>
-<span class="String">        if((fp=fopen(title,&quot;w&quot;))==NULL)</span>
-<span class="String">        {</span>
-<span class="String">            printf(&quot;can't not open the file&quot;);</span>
-<span class="String">        }</span>
-        fprintf(fp,<span class="String">&quot;%s&quot;</span>,<span class="String">&quot;---\nlayout: post\ntitle: &quot;</span>);
-        fprintf(fp,<span class="String">&quot;%s&quot;</span>,<span class="String">&quot;\&quot;&quot;);</span>
-<span class="String">        fprintf(fp,&quot;</span>%s<span class="String">&quot;,str);</span>
-<span class="String">        fprintf(fp,&quot;</span>%s<span class="String">&quot;,&quot;</span>\<span class="String">&quot;\n&quot;</span>);
-        fprintf(fp,<span class="String">&quot;%s&quot;</span>,<span class="String">&quot;---&quot;</span>);
+   {
+    void edit(char title[]);
+    FILE *fp;
+    struct tm *timenow;
+    time_t now;
+    char year[4],day[2],month[2];
+    char date[19]="\0";
+    char str[30],hail[]=".md";
+    int f;
+    time(&now);
+    timenow =gmtime (&now);
+    sprintf(year,"%d",timenow->tm_year+1900);
+    sprintf(day,"%d",timenow->tm_mday);
+    sprintf(month,"%d",timenow->tm_mon+1);
+    strcat(date,year);
+    date[4]='-';
+    strcat(date,month);
+    strcat(date,"-");
+    strcat(date,day);
+    strcat(date,"-");
+    char title[200]="gikieng.github.com/_posts/";
+    strcat(title,date);
+    printf("please input your title\n");
+    scanf("%s",str);
+    strcat(title,str);
+    strcat(title,hail);
+    printf("%s\n",title);
+    if((fp=fopen(title,"r"))==NULL)
+    {
+        printf("你将新建一个新文章");
+        if((fp=fopen(title,"w"))==NULL)
+        {
+            printf("can't not open the file");
+        }
+        fprintf(fp,"%s","---\nlayout: post\ntitle: ");
+        fprintf(fp,"%s","\"");
+        fprintf(fp,"%s",str);
+        fprintf(fp,"%s","\"\n");
+        fprintf(fp,"%s","---");
         fclose(fp);}
-    printf(<span class="String">&quot;是否要继续编辑：1(yes) or 2(no)\n&quot;</span>);
-    scanf(<span class="String">&quot;%d&quot;</span>,&amp;f);
+    printf("是否要继续编辑：1(yes) or 2(no)\n");
+    scanf("%d",&f);
     if(f==1)edit(title);
 
     return 0;
     }
 
 void edit(char title[])
-<span class="String">{ </span>
-<span class="String">     char cmd [200]=&quot;/0&quot;;</span>
-<span class="String">     printf(&quot;请输入你的编辑器\n&quot;);</span>
-<span class="String">     scanf(&quot;%s&quot;,cmd);</span>
-<span class="String">     strcat(cmd,title);</span>
-<span class="String">     system(cmd);</span>
-<span class="String"> }</span>
-
+{ 
+     char cmd [200]="/0";
+     printf("请输入你的编辑器\n");
+     scanf("%s",cmd);
+     strcat(cmd,title);
+     system(cmd);
+ }
+{% endhighlight %}
 编译运行（当然其中进行了n次的测试，毕竟对那些函数都不熟悉）成功。把生成的postcr移到/bin目录下，就可以在任何路径下直接postcr了（这里今天才知道的东西，好用）。
 
 我郁闷呀，写出来的文章居然用Jekyll生成不了，一大堆的错误，只好空四个空格了，代码高亮也不想弄了。
-
-
-
-</pre>
-</body>
-</html>
