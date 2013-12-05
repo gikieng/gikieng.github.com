@@ -1,8 +1,9 @@
 *
 {
+    font-family:FangSong,SimSun,"Times New Roman",Georgia,Serif;
     word-break: break-all; 
     word-wrap:break-word;
-    letter-spacing: 1mm;
+    letter-spacing: 0.5mm;
 }
 h2
 {
