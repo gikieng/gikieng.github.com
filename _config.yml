@@ -1,3 +1,6 @@
 name: Gikieng
 markdown: redcarpet
 pygments: true
+
+
+permalink:    /:categories/:title
