@@ -1,13 +1,14 @@
 *
 {
-word-break: break-all; 
-word-wrap:break-word;
-letter-spacing: ２mm；
+    font-family:"Times New Roman",Georgia,Serif;
+    word-break: break-all; 
+    word-wrap:break-word;
+    letter-spacing: ２mm；
 }
 h2
 {
-	font-size:20px;
-	font-weight:bold;
+    font-size:20px;
+    font-weight:bold;
 }
 img
 {
@@ -93,27 +94,27 @@ div#navcontainer li:hover
 }
 #tagUl
 {
-height:300px;
-font-size:24px;
+    height:300px;
+    font-size:24px;
 }
 #tagUl li
 {
-text-align:center;
-width:200px;
-margin-right:20px;
-margin-bottom:20px;
-float:left;
-border: 1px solid #ccc;
-border-radius:5px;
+    text-align:center;
+    width:200px;
+    margin-right:20px;
+    margin-bottom:20px;
+    float:left;
+    border: 1px solid #ccc;
+    border-radius:5px;
 }
 #tagUl li:hover
 {
-background-color:yellow;
-opacity:0.5;
-transform:
+    background-color:yellow;
+    opacity:0.5;
+    transform:
 }
 article
 {
-margin-left:20px;
-margin-bottom:20px;
+    margin-left:20px;
+    margin-bottom:20px;
 }
