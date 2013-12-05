@@ -1,0 +1,81 @@
+---
+layout : post
+category : C
+title : GCC的环境变量
+tags : [C/C++, code]
+---
+
+以前我用GCC只是简单地把bin加入到Path里，后来接触的东西越来越多，这显然不能满足日常需求了。今天总结一下。
+
+<h4 style="color:#71F95F">C_INCLUDE_PATH</h4>
+
+指定一个或多个目录列表，以便查找头文件。就好像`-isystem`选项一样，但是`-isystem`的优先级比环境变量高。
+
+<h4 style="color:#5FCBF9">COMPILER_PATH</h4>
+
+如果没有指定`GCC_EXEC_PREFIX`，编译程序会在这里查找它的子程序。
+
+
+<h4 style="color:#5FF99F">CPATH</h4>
+
+查找头文件的地方
+
+<h4 style="color:#CBF95F">CPLUS_INCLUDE_PATH</h4>
+
+查找头文件的地方。
+
+<h4 style="color:#F9D05F">DEPENDENCIES_OUTPUT</h4>
+
+让预处理程序基于依赖关系makefile规则写入文件。如果定义了两个名字，第二个将作为依赖关系的目标名。
+
+<h4 style="color:#F4702D">GCC_EXEC_PREFIXT</h4>
+
+默认设置是`prefix/lib/gcc-lib/`这里的`prefix`是安装编译程序时`configure`脚本指定的名字。
+
+它会作为编译程序的所有子程序名字的前缀。
+
+
+<h4 style="color:#5D8BDA">LANG</h4>
+
+指出编译程序使用的字符集，可创建字符文字、串文字和注释。
+
+如果没有定义`LANG`，或者定义不可识别，函数`mblen()`被用来确定字符宽度，`mbtowe`被用来将多字节序列转换为宽字节。
+
+<h4 style="color:#8F5DDA">LC_ALL</h4>
+
+如果设置，环境变量`LC_MESSAGES`和`LC_TYPE`的值将被代替。
+
+<h4 style="color:#DA5DBF">LC_CTYPE</h4>
+
+定义多字节字符的字符分类。对于Australian English，可以将它设置为`en_AU`；对于Mexican Spanish，可以将它设置为`ez_MX`。如果没有设置，默认为`LANG`变量的值，如果`LANG`也没有设置，就使用`C`英语。
+
+<h4 style="color:#E8CAE1">LC_MESSAGES</h4>
+
+指名让编译程序使用何种语言发出诊断消息。
+
+<h4 style="color:#E95584">LD_LIBRARY_PATH</h4>
+
+定位动态链接库。在编译程序的目录中找不到共享库时，才需要这个变量。
+
+<h4 style="color:#8FEFC0">LD_RUN_PATH</h4>
+
+和ld中的-R选项一样。
+
+<h4 style="color:#E9EF8F">LIBARY_PATH</h4>
+
+链接程序的搜索列表。静态库。
+
+<h4 style="color:#EFC48F">OBJC_INCLUDE_PATH</h4>
+
+指定头文件目录。
+
+
+<h4 style="color:#4FCBF5">SUNPRO_OUTPUT</h4>
+
+令预处理程序基于依赖关系的`makefile`规则写入文件。
+
+<h4 style="color:#D466EF">TMP_DIR</h4>
+
+供编译程序临时存放工作文件。这些文件通常在编译过程结束时被删除。比如预处理程序输出并输入给编译程序的文件。
+
+<h4 style="color:pink">end</h4>

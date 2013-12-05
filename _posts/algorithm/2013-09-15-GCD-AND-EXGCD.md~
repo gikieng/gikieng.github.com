@@ -1,0 +1,61 @@
+---
+layout : post
+category : 技术
+title : 欧几里得算法和最大公因数
+tags : [beginner]
+---
+
+`GCD(a, b)`是计算自然数`a`和`b`的最大公因数的函数，`a`除`b`的商和余数分别为`p`和`q`。从而$a=b\times p+q$。所以`GCD(b, q)`既整除`a`又整除`b`，也就是整除`GCD(a, b)`。又因为$q=a-b\times p$，同理可证`GCD(a, b)`整除`GCD(b, q)`。因此我们知道`GCD(a, b) = GCD(b, a % b)`。不断这样操作下去，由于GCD的第二个参数总是不断减小的，最终会得到`GCD(a, b) = GCD(c, 0)`，0和c的最大公约数是c，这样就计算出了`GCD(a, b)`。代码在下面。
+
+<style type="text/css">
+<!--
+* { font-size: 1em; }
+.Constant { color: #2aa198; }
+.Statement { color: #719e07; }
+.Type { color: #b58900; }
+-->
+</style>
+<pre style="font-family: monospace; color: #839496; background-color: #002b36;">
+<span class="Type">int</span> gcd(<span class="Type">int</span> a, <span class="Type">int</span> b) {
+    <span class="Statement">return</span> b == <span class="Constant">0</span> ? a : gcd(b, a % b);
+}
+</pre>
+
+<h4>扩展欧几里得</h4>
+
+就是求解方程$ax+by=gcd\left( a,b \right)$。
+
+<style type="text/css">
+<!--
+* { font-size: 1em; }
+.Constant { color: #2aa198; }
+.Statement { color: #719e07; }
+.Type { color: #b58900; }
+-->
+</style>
+<pre style="font-family: monospace; color: #839496; background-color: #002b36;">
+<span class="Type">int</span> extgcd(<span class="Type">int</span> a, <span class="Type">int</span> b, <span class="Type">int</span>&amp; x, <span class="Type">int</span>&amp; y) {
+    <span class="Type">int</span> d = a;
+    <span class="Statement">if</span>(b != <span class="Constant">0</span>) {
+        d = extgcd(b, a % b, y, x);
+        y -= (a / b) * x;
+    } <span class="Statement">else</span> {
+        x = <span class="Constant">1</span>;
+        y = <span class="Constant">0</span>;
+    }
+    <span class="Statement">return</span> d;
+}
+</pre>
+
+它的返回值和`gcd`一样。假设已经求得了
+
+<img src="http://quant67.github.com/assets/gcd/gcd01.png"/>
+
+的整数解${ x }^{ ' }$和${ y }^{ ' }$。再将
+
+<img src="http://quant67.github.com/assets/gcd/gcd02.png"/>
+
+代入后得到
+
+$a{ y }^{ ' }+b\left( { x }^{ ' }-\left( a/b \right) \times { y }^{ ' } \right) =gcd\left( a,b \right) $
+

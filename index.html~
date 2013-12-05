@@ -1,9 +1,0 @@
----
-layout: default
-title: 活在代码里
----
-
-     <div class="divCategory">
-          <hr />
-           {% include Posts.html %}
-     </div>

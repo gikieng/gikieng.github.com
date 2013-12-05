@@ -1,0 +1,18 @@
+---
+layout: post
+title: 陶冶情操
+category : math
+tagline: "math"
+tags : [math]
+---
+
+很久没有更新博客了，来一个小题目陶冶情操。
+
+> a,b,c,d是满足ab=cd的四个正整数， 证明：存在四个正整数p,q,r,s，使得a=pq,b=rs,c=ps,d=qr.
+
+
+<h4>证明</h4>
+<p>
+由已知，$\frac { a }{ c } =\frac { d }{ b }$ 是有理数，所以存在两个互素的正整数q,s使得$\frac { a }{ c } =\frac { d }{ b } =\frac { q }{ s } $，所以as=cq，由于gcd(q,s)=1，所以q|a，s|c，所以存在p，使得a=pq，c=ps，同理可得d=qr，b=rs.
+</p>
+<h3 style="color: pink">end</h3>

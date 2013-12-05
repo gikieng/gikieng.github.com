@@ -1,0 +1,24 @@
+---
+layout: post
+title: 同余幂
+category : algorithm
+tagline: "math"
+tags : [math, algorithm]
+---
+
+
+给定a,i,n,求 ${ a }^{ i }\quad mod\quad n$
+
+
+最基本的方法是通过递归：${ a }^{ i }={ \left( \quad { a }^{ \frac { i }{ 2 }  }\quad  \right)  }^{ 2 }\times { a }^{ i\quad mod\quad 2 }$
+
+代码如下
+<pre class="prettyprint">
+long long pow_mod(long long a, long long i, long long n) {
+	if(0 == i) return 1 % n;
+	long long temp = pow_mod(a, i >> 1, n);
+	temp = temp * temp % n;
+	if(i & 1) temp = (long long)temp * a % n;
+	return temp;
+}
+</pre>
