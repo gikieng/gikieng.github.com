@@ -1,3 +1,8 @@
+---
+layout: post
+title: "iptable-rule"
+categories: linux
+---
 iptables是Linux实现过滤包的一个应用程序,是打开服务器的最后一扇大门,也称
 之为Linux的防火墙。使用得当,可以对访问的可疑IP实现控制,特别恶意攻击时直
 接将其拒绝门外。
