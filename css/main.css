@@ -90,6 +90,7 @@ div#navcontainer li:hover
 }
 .area
 {
+    background-color:hsl(48, 33%, 94%);
     min-height:600px;
     margin:50px 20px 10px 14px; 
 }
