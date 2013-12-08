@@ -1,13 +1,20 @@
 *
 {
-word-break: break-all; 
-word-wrap:break-word;
-letter-spacing: ２mm；
+    /*font-family:FangSong,SimSun,"Times New Roman",Georgia,Serif;*/
+	font-family:myfont;
+    word-break: break-all;
+    word-wrap:break-word;
+    letter-spacing: 0.5mm;
+}
+@font-face
+{
+	font-family:myfont;
+	src:url(/font/maozedong.ttf) format("truetype");
 }
 h2
 {
-	font-size:20px;
-	font-weight:bold;
+    font-size:20px;
+    font-weight:bold;
 }
 img
 {
@@ -15,6 +22,7 @@ img
 }
 body
 {
+    background-color:hsl(48, 33%, 94%);
     display:-webkit-box;
     display: box; 
     -webkit-box-orient: vertical; 
@@ -89,31 +97,38 @@ div#navcontainer li:hover
 }
 .area
 {
+    min-height:600px;
     margin:50px 20px 10px 14px; 
 }
 #tagUl
 {
-height:300px;
-font-size:24px;
+    height:300px;
+    font-size:24px;
 }
 #tagUl li
 {
-text-align:center;
-width:200px;
-margin-right:20px;
-margin-bottom:20px;
-float:left;
-border: 1px solid #ccc;
-border-radius:5px;
+    text-align:center;
+    width:200px;
+    margin-right:20px;
+    margin-bottom:20px;
+    float:left;
+    border: 1px solid #ccc;
+    border-radius:5px;
 }
 #tagUl li:hover
 {
-background-color:yellow;
-opacity:0.5;
-transform:
+    background-color:yellow;
+    opacity:0.5;
+    transform:
 }
 article
 {
-margin-left:20px;
-margin-bottom:20px;
+    margin-left:20px;
+    margin-bottom:20px;
+}
+#about
+{
+	font-family:myfont;
+	font-size:30px;
+	color:#f90;
 }

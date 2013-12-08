@@ -1,9 +1,15 @@
 *
 {
-    font-family:FangSong,SimSun,"Times New Roman",Georgia,Serif;
-    word-break: break-all; 
+    /*font-family:FangSong,SimSun,"Times New Roman",Georgia,Serif;*/
+	font-family:myfont;
+    word-break: break-all;
     word-wrap:break-word;
     letter-spacing: 0.5mm;
+}
+@font-face
+{
+	font-family:myfont;
+	src:url(/font/maozedong.ttf) format("truetype");
 }
 h2
 {
@@ -16,6 +22,7 @@ img
 }
 body
 {
+    background-color:hsl(48, 33%, 94%);
     display:-webkit-box;
     display: box; 
     -webkit-box-orient: vertical; 
@@ -90,7 +97,6 @@ div#navcontainer li:hover
 }
 .area
 {
-    background-color:hsl(48, 33%, 94%);
     min-height:600px;
     margin:50px 20px 10px 14px; 
 }
@@ -119,4 +125,10 @@ article
 {
     margin-left:20px;
     margin-bottom:20px;
+}
+#about
+{
+	font-family:myfont;
+	font-size:20px;
+	color:#f90;
 }
