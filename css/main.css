@@ -2,16 +2,15 @@
 {
 
     /*font-family:FangSong,SimSun,"Times New Roman",Georgia,Serif;*/
-	font-family:myfont;
     word-break: break-all;
     word-wrap:break-word;
     letter-spacing: 0.5mm;
 }
-@font-face
+/*@font-face
 {
 	font-family:myfont;
 	src:url(/font/maozedong.ttf) format("truetype");
-}
+}*/
 h2
 {
     font-size:20px;
@@ -23,7 +22,6 @@ img
 }
 body
 {
-    background-color:hsl(48, 33%, 94%);
     display:-webkit-box;
     display: box; 
     -webkit-box-orient: vertical; 
@@ -40,6 +38,7 @@ div#navbar
 }
 div#navbar-inner
 {
+    text-shadow:0 0 5px #ccc;
     min-height:40px;
     background-color:#fafafa;
     padding-top: 0px; 
@@ -78,6 +77,7 @@ div#navcontainer li:hover
 }
 #area
 {
+    background-color:hsl(48, 33%, 94%);
     margin:auto; 
     max-width: 800px; 
     border: 1px solid #ccc; 
