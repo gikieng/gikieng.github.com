@@ -101,34 +101,35 @@ function move()
         railX = snake[snake.length-1][0],
         railY = snake[snake.length-1][1],
         nextX,
-        cnt=0,
-        fcnt=0,
         nextY;
-    var maxx = 9999,
-        maxy = 9999,
+    var maxx = 999,
+        maxy = 999,
         nexti = 0,
-        flag = 1;
+        flag = 1,
+        j;
     for(var i = 0;i < 4; i++)
     {
         nextX = headX + movestep[i][0];
         nextY = headY + movestep[i][1];
-        if(nextX < 20 && nextY < 20 && nextX >= 0 && nextY >= 0 && map[nextX][nextY] && Math.abs(food[0]-nextX)<=maxx&&Math.abs(food[1]-nextY) <= maxy)
+        if(nextX < 20 && nextY < 20 && nextX >= 0 && nextY >= 0 && map[nextX][nextY] && Math.abs(food[0]-nextX) <= maxx && Math.abs(food[1]-nextY) <= maxy)
         {
-            maxx = Math.abs(nextX - food[0]);
-            maxy = Math.abs(nextY - food[1]);
-            var nnextX,
-                nnextY;
-            for(var j = 0; j < 4; j++)
+            var cnt = 0;
+            for(j = 0; j < 4; j++)
             {
-                nnextX = nextX + movestep[j][0];
-                nnextY = nextY + movestep[j][1];
-                                if(nnextX>=0&&nnextY>=0&&nnextX<20&&nnextY<20&&map[nnextX][nnextY])
+                if(nextX+movestep[j][0]<20&&nextY+movestep[j][1]<20&&nextX+movestep[j][0]>=0&&nextY+movestep[j][1]>=0&&map[nextX+movestep[j][0]][nextY+movestep[j][1]]==1)
                     cnt++;
             }
-            if(cnt<fcnt)
+            if(cnt==0)   
+            {
                 continue;
-            else 
-                fcnt=cnt;
+            }
+            maxx = Math.abs(nextX - food[0]);
+            maxy = Math.abs(nextY - food[1]);
+            if(cnt==1&&flag==0)
+            {
+                maxx=999;
+                maxy=999;
+            }
             nexti = i;
             flag = 0;
         }
@@ -149,8 +150,45 @@ function move()
     }
     else
     {
-        nextX = headX + movestep[nexti][0];
-        nextY = headY + movestep[nexti][1];
+        var headdX = 2*headX - snake[1][0],
+            headdY = 2*headY - snake[1][1];
+       //增加存活优先防止进入自己的圈中 
+        if(headdX<20&&headdY<20&&headdX>=0&&headdX>=0&&map[headdX][headdY]==0)
+        {
+            for(j = 0; j < snake.length; j++)
+                if(snake[j][0]==headdX && snake[j][1]==headdY)
+                    break;
+            nextX = headX + snake[j][0] - snake[j-1][0];
+            nextY = headY + snake[j][1] - snake[j-1][1];
+            if(map[nextX][nextY]==0)
+            {
+            nextX = headX + movestep[nexti][0];
+            nextY = headY + movestep[nexti][1];
+            }
+        }
+        else
+        {
+            nextX = headX + movestep[nexti][0];
+            nextY = headY + movestep[nexti][1];
+        }
+       //增加存活优先防止进入自己的圈中 
+        if(headdX<20&&headdY<20&&headdX>=0&&headdX>=0&&map[headdX][headdY]==0)
+        {
+            for(j = 0; j < snake.length; j++)
+                if(snake[j][0]==headdX && snake[j][1]==headdY)
+                    break;
+            nextX = headX + snake[j][0] - snake[j-1][0];
+            nextY = headY + snake[j][1] - snake[j-1][1];
+            if(map[nextX][nextY]==0)
+            {
+            nextX = headX + movestep[nexti][0];
+            nextY = headY + movestep[nexti][1];
+            }
+        }
+        else
+        {
+            nextX = headX + movestep[nexti][0];
+            nextY = headY + movestep[nexti][1];
         gridElems[railX][railY].className = "";
         map[railX][railY] = 1;
         map[nextX][nextY] = 0;
@@ -166,9 +204,10 @@ function move()
         else 
             snake.pop();
     }
-    timer = setTimeout("move()",50);
+    timer = setTimeout("move()",40);
 
 }
+
 </script>
 </head>
 <body onselectstart="return false">
