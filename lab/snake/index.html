@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>贪吃蛇</title>
+<style type="text/css">
+* {margin:0; padding:0}
+body {background:#333; -moz-user-select:none; text-align:center; font-size:12px}
+table {margin:80px auto 10px auto; overflow:hidden; border-collapse:collapse; }
+td {width:20px; height:20px; border:1px solid #eee; background:#f4f4f4}
+.snakebody {background:black;}
+.snakehead{background:red;}
+.food {background:#093}
+
+#say {margin-top:50px; color:white;font-size:30px;}
+</style>
+<script type="text/javascript">
+var HEIGHT = 20,
+    WIDTH = 20,
+    snake,
+    timer,
+    len = 3,
+    gridElems = multiArray(HEIGHT,WIDTH),
+    map = multiArray(HEIGHT,WIDTH),
+    food = new Array(),
+    movestep;
+
+window.onload = function()
+{
+    movestep = new Array();
+    movestep.push([0,1]);
+    movestep.push([0,-1]);
+    movestep.push([-1,0]);
+    movestep.push([1,0]);
+    snake = new Array();
+    initGrid();
+    initsnake();
+    setfood();
+    timer = setTimeout("move()",30);
+}
+//创建二维数组
+function multiArray(m,n)
+{
+    var arr = new Array(m);
+    for(var i = 0; i < m; i++)
+    {
+        arr[i] = new Array(n);
+    }
+    return arr;
+}
+//初始化地图
+function initGrid()
+{
+    var tbody = document.createElement("tbody"),
+        table = document.createElement("table");
+    for(var i = 0; i < HEIGHT; i++)
+    {
+        var row = document.createElement("tr");
+        for(var j = 0; j < WIDTH; j++)
+        {
+            var col = document.createElement("td");
+            gridElems[i][j] = row.appendChild(col);
+            map[i][j]=1;
+        }
+        tbody.appendChild(row);
+    }
+    table.appendChild(tbody);
+    (document.getElementById("snakeWrap")).appendChild(table);
+}
+//初始化小蛇
+function initsnake()
+{
+    var x ,y;
+    x =Math.floor(Math.random()*10) + 10;
+    y =Math.floor(Math.random()*10) + 5;
+    for(i = 0;i < len; i++)
+    {
+        gridElems[x][y+i].className = "snakebody"; 
+        snake.push([x,y+i]);
+        map[x][y+i]=0;
+    }
+}
+//放置食物
+function setfood()
+{
+    var p;
+    food[0] = 21;
+    food[1] = 21;
+    while(food[0] >= 20 || food[1] >= 20 || map[food[0]][food[1]] == 0)
+    {
+        food[0] = Math.floor(Math.random()*20);
+        food[1] = Math.floor(Math.random()*20);
+    }
+    gridElems[food[0]][food[1]].className = "food";
+}
+//行走
+function move()
+{
+    var headX = snake[0][0],
+        headY = snake[0][1],
+        railX = snake[snake.length-1][0],
+        railY = snake[snake.length-1][1],
+        nextX,
+        cnt=0,
+        fcnt=0,
+        nextY;
+    var maxx = 9999,
+        maxy = 9999,
+        nexti = 0,
+        flag = 1;
+    for(var i = 0;i < 4; i++)
+    {
+        nextX = headX + movestep[i][0];
+        nextY = headY + movestep[i][1];
+        if(nextX < 20 && nextY < 20 && nextX >= 0 && nextY >= 0 && map[nextX][nextY] && Math.abs(food[0]-nextX)<=maxx&&Math.abs(food[1]-nextY) <= maxy)
+        {
+            maxx = Math.abs(nextX - food[0]);
+            maxy = Math.abs(nextY - food[1]);
+            var nnextX,
+                nnextY;
+            for(var j = 0; j < 4; j++)
+            {
+                nnextX = nextX + movestep[j][0];
+                nnextY = nextY + movestep[j][1];
+                                if(nnextX>=0&&nnextY>=0&&nnextX<20&&nnextY<20&&map[nnextX][nnextY])
+                    cnt++;
+            }
+            if(cnt<fcnt)
+                continue;
+            else 
+                fcnt=cnt;
+            nexti = i;
+            flag = 0;
+        }
+    }
+    if(flag)
+    {
+        alert("失败");
+        for(var i = len; i > 3; i--)
+        {
+            railX = snake[snake.length-1][0],
+                  railY = snake[snake.length-1][1],
+                  map[railX][railY]=1;
+            gridElems[railX][railY].className="";
+            snake.pop();
+            document.getElementById("score").value = 0;
+        }
+        len = 3;
+    }
+    else
+    {
+        nextX = headX + movestep[nexti][0];
+        nextY = headY + movestep[nexti][1];
+        gridElems[railX][railY].className = "";
+        map[railX][railY] = 1;
+        map[nextX][nextY] = 0;
+        gridElems[nextX][nextY].className="snakehead";
+        gridElems[headX][headY].className="snakebody";
+        snake.unshift([nextX,nextY]);
+        if(nextX == food[0] && nextY == food[1])
+        {
+            len ++;
+            setfood();
+            document.getElementById("score").value = len-3;
+        }
+        else 
+            snake.pop();
+    }
+    timer = setTimeout("move()",50);
+
+}
+</script>
+</head>
+<body onselectstart="return false">
+<div id="say">贪吃蛇</br>
+    <span style="font-size:20px;" >分数  <input type = "text" id=score></span>
+</div>
+<div id="snakeWrap"></div>
+</body>
+</html>

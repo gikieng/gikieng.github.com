@@ -2,7 +2,7 @@
 {
 
     /*font-family:FangSong,SimSun,"Times New Roman",Georgia,Serif;*/
-	font-family:myfont;
+    font-family:myfont;
     word-break: break-all;
     word-wrap:break-word;
     letter-spacing: 0.5mm;
@@ -23,7 +23,6 @@ img
 }
 body
 {
-    background-color:hsl(48, 33%, 94%);
     display:-webkit-box;
     display: box; 
     -webkit-box-orient: vertical; 
@@ -40,6 +39,7 @@ div#navbar
 }
 div#navbar-inner
 {
+    text-shadow:0 0 5px #ccc;
     min-height:40px;
     background-color:#fafafa;
     padding-top: 0px; 
@@ -78,6 +78,7 @@ div#navcontainer li:hover
 }
 #area
 {
+    background-color:hsl(48, 33%, 94%);
     margin:auto; 
     max-width: 800px; 
     border: 1px solid #ccc; 
@@ -132,4 +133,18 @@ article
 	font-family:myfont;
 	font-size:20px;
 	color:#f90;
+}
+#page-navigation
+{
+    border-top:2px solid blue;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+}
+.left
+{
+    float:left;
+}
+.right
+{
+    float:right;
 }

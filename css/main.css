@@ -2,6 +2,7 @@
 {
 
     /*font-family:FangSong,SimSun,"Times New Roman",Georgia,Serif;*/
+   /* font-family:myfont;*/
     word-break: break-all;
     word-wrap:break-word;
     letter-spacing: 0.5mm;
@@ -9,7 +10,7 @@
 /*@font-face
 {
 	font-family:myfont;
-	src:url(/font/maozedong.ttf) format("truetype");
+	src:url(/font/1maozedong.ttf) format("truetype");
 }*/
 h2
 {
