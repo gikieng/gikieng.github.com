@@ -125,10 +125,11 @@ function move()
             }
             maxx = Math.abs(nextX - food[0]);
             maxy = Math.abs(nextY - food[1]);
-            if(cnt==1&&flag==0)
+            if(cnt<=1&&flag==0)
             {
-                maxx=999;
-                maxy=999;
+               // maxx=999;
+                //maxy=999;
+                continue;
             }
             nexti = i;
             flag = 0;
@@ -152,7 +153,7 @@ function move()
     {
         var headdX = 2*headX - snake[1][0],
             headdY = 2*headY - snake[1][1];
-       //增加存活优先防止进入自己的圈中 
+        //增加存活优先防止进入自己的圈中 
         if(headdX<20&&headdY<20&&headdX>=0&&headdX>=0&&map[headdX][headdY]==0)
         {
             for(j = 0; j < snake.length; j++)
@@ -162,8 +163,8 @@ function move()
             nextY = headY + snake[j][1] - snake[j-1][1];
             if(map[nextX][nextY]==0)
             {
-            nextX = headX + movestep[nexti][0];
-            nextY = headY + movestep[nexti][1];
+                nextX = headX + movestep[nexti][0];
+                nextY = headY + movestep[nexti][1];
             }
         }
         else
@@ -171,7 +172,7 @@ function move()
             nextX = headX + movestep[nexti][0];
             nextY = headY + movestep[nexti][1];
         }
-       //增加存活优先防止进入自己的圈中 
+        //增加存活优先防止进入自己的圈中 
         if(headdX<20&&headdY<20&&headdX>=0&&headdX>=0&&map[headdX][headdY]==0)
         {
             for(j = 0; j < snake.length; j++)
@@ -181,14 +182,15 @@ function move()
             nextY = headY + snake[j][1] - snake[j-1][1];
             if(map[nextX][nextY]==0)
             {
-            nextX = headX + movestep[nexti][0];
-            nextY = headY + movestep[nexti][1];
+                nextX = headX + movestep[nexti][0];
+                nextY = headY + movestep[nexti][1];
             }
         }
         else
         {
             nextX = headX + movestep[nexti][0];
             nextY = headY + movestep[nexti][1];
+        }
         gridElems[railX][railY].className = "";
         map[railX][railY] = 1;
         map[nextX][nextY] = 0;
@@ -205,7 +207,6 @@ function move()
             snake.pop();
     }
     timer = setTimeout("move()",40);
-
 }
 
 </script>
