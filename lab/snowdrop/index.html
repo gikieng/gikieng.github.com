@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>snowDrop</title>
+<style type="text/css">
+html,body {
+    padding:0; margin:0;
+    background: #3B3B3B;
+    overflow: hidden;
+    height:100%;
+}
+#demo {
+    display: block;
+    margin: 25px auto;
+    border: 1px solid #000;
+}
+.snow-el {
+    color: #fff;
+    // background-color:white;
+    font-size: 40px;
+    font-family:"arrial";
+    position: absolute;
+    top: 40px;
+    opacity: .9;
+    text-shadow: 0 0 3px #fff;
+    height: 36px;
+    width: 36px;
+   // line-height:26px;
+    text-align:center;
+    overflow: hidden;
+    z-index: 9999;
+    -moz-animation:animations 3s ease infinite;
+    -webkit-animation:animations 3s ease infinite;
+    animation:animations 3s ease infinite;
+}
+@-webkit-keyframes animations{
+    100%{transform:rotate(360deg);}
+}
+@-webkit-keyframes animations{
+    100%{transform:rotate(360deg);}
+}
+@keyframes animations{
+    100%{transform:rotate(360deg);}
+}
+
+</style>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+var snowlist = new Array();
+var snowshow = [];
+var winW = $(window).width()-50,
+    winH = $(window).height()+40;
+jQuery(document).ready(function start()
+        {
+        var boxId = document.getElementById("box");
+        for (var i = 0; i < 15; i++)
+        {
+        snowlist[i] = document.createElement("span");
+        snowlist[i].className = "snow-el";
+        snowlist[i].innerHTML="*";
+        boxId.appendChild(snowlist[i]);
+        }
+        for(var i = 0; i < 15; i++)
+        {
+        var ix = Math.floor(Math.random()*winW);
+        var iy = Math.floor(Math.random()*winH);
+        snowlist[i].style.left = ix+"px";
+        snowlist[i].style.top = -40+"px";
+        dropsnow(i);
+        }
+        })
+function dropsnow(i)
+{
+    var ix = Math.floor(Math.random()*winW),
+    speed = randomPos(15) + 20 ,
+    snowSize = randomPos(15)+25,
+    stry = winH + "px";
+    snowlist[i].style.fontSize = snowSize+"px";
+    snowlist[i].style.left = ix+"px";
+    $(snowlist[i]).animate({top:stry},400*speed,function(){
+            snowlist[i].style.top = "-40px";$(snowlist[i]).animate({top:winH + "px"},400*speed,dropsnow(i));
+            });
+}
+function randomPos(size)
+{
+    return Math.round(Math.random()*size);
+}
+</script>
+</head>
+<body>
+<img id="demo" src="demo.jpg" alt="snowy landscape">
+<div id="box">
+</div>
+</body>
+</html>
