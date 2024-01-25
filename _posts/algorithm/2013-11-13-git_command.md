@@ -9,8 +9,8 @@ image:
 
 ### 刚装git
 {% highlight python linenos %}
-git config --global user.email "liaotonglang@gmail.com"
-git config --global user.name "quant67"
+git config --global user.email "gikieng@gmail.com"
+git config --global user.name "gikieng"
 git config --global color.ui always
 git config --global alias.co checkout
 git config --global alias.ci commit
